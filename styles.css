@@ -1,0 +1,10 @@
+body {
+  background-image: url("images/black-felt.png");
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card img {
+  height: auto;
+  width: 10vw;
+}
