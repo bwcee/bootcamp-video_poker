@@ -1,27 +1,90 @@
 ////////////////////////////////////////////////
 //Global Variables
 ////////////////////////////////////////////////
-let playDeck 
+let rounds = 0;
 
-let userPoints = 100;
+let playDeck;
+
+let credit = 100;
+let coinBet = 0;
 
 let userHand = [];
-let userDiscards =[];
+let sortedHand = [];
+let userDiscards = [];
 
+const payoutTable = [
+  { hand: "Jacks or Better", pay: 1 },
+  { hand: "2 Pairs", pay: 2 },
+  { hand: "3 of a Kind", pay: 3 },
+  { hand: "Straight", pay: 4 },
+  { hand: "Flush", pay: 6 },
+  { hand: "Full House", pay: 9 },
+  { hand: "4 of a Kind", pay: 25 },
+  { hand: "Straight Flush", pay: 50 },
+  { hand: "Royal Flush", pay: 250 },
+];
 
+let coinArr = [
+  { value: 1, image: "images/OneChip.png", selected: false },
+  { value: 2, image: "images/TwoChip.png", selected: false },
+  { value: 3, image: "images/ThreeChip.png", selected: false },
+  { value: 4, image: "images/FourChip.png", selected: false },
+  { value: 5, image: "images/FiveChip.png", selected: false },
+];
 
+//UI constants
 
+//div to contain starting screen
+const startDisp = document.createElement("div");
+startDisp.classList.add("start_display");
 
-/* //How to use sprites to render image
-https://www.tutorialrepublic.com/css-tutorial/css-sprites.php
+//div to contain entire display
+const wholeDisp = document.createElement("div");
 
-//Actual code to use poker card sprite
-https://codepen.io/ag_kush/pen/qBBMZRX
-https://dobsondev.com/wp-content/uploads/2015/04/windows-playing-cards.png
-https://www.transparenttextures.com/patterns/black-felt.png
+//div to contain entire play  area
+const playArea = document.createElement("div");
+playArea.classList.add("play_area");
 
-//Using percentages to control size of sprite image?
-https://spin.atomicobject.com/2013/02/22/css-sprite-semantics-scaleability/
+//div to show credits
+const infoBar = document.createElement("div");
+infoBar.classList.add("info_bar");
 
-//Entire video poker game code 
-https://www.codeproject.com/Articles/1187548/Video-Poker */
+//div to show coins
+const coinBar = document.createElement("div");
+coinBar.classList.add("coin_bar");
+
+//div to show cards
+const cardsDisplay = document.createElement("div");
+cardsDisplay.classList.add("cards_display");
+
+//controls area div
+const controlsDisplay = document.createElement("div");
+controlsDisplay.classList.add("controls_display");
+
+//deal button
+const dealBtn = document.createElement("button");
+dealBtn.classList.add("deal_button");
+dealBtn.innerText = "Deal";
+
+//play button
+const playBtn = document.createElement("button");
+playBtn.classList.add("play_button");
+playBtn.innerText = "Play";
+
+//replay button
+const replayBtn = document.createElement("button");
+replayBtn.classList.add("replay_button");
+replayBtn.innerText = "Replay";
+
+// help button
+const helpBtn = document.createElement("button");
+helpBtn.classList.add("help_button");
+helpBtn.innerText = "Help";
+
+//Audio
+const startAudio = document.getElementById("start_audio");
+const holdAudio = document.getElementById("hold_audio");
+const unholdAudio = document.getElementById("unhold_audio");
+const dealAudio = document.getElementById("deal_audio");
+const loseAudio = document.getElementById("lose_audio");
+const winAudio = document.getElementById("win_audio");

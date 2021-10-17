@@ -1,12 +1,113 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Video Poker</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
+    <title>Video Poker</title>
   </head>
 
   <body>
-    <h1 id="header">Video Poker</h1>
+    <div id="marquee"><img src="images/VideoPokerMarquee.jpg" alt="" /></div>
+    <div id="pay_table">
+      <table>
+        <tr>
+          <th>play 1 to 5 coins</th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+        </tr>
+        <tr>
+          <td>Royal Flush</td>
+          <td>250</td>
+          <td>500</td>
+          <td>750</td>
+          <td>1000</td>
+          <td>4000</td>
+        </tr>
+        <tr>
+          <td>Straight Flush</td>
+          <td>50</td>
+          <td>100</td>
+          <td>150</td>
+          <td>200</td>
+          <td>250</td>
+        </tr>
+        <tr>
+          <td>4 of a Kind</td>
+          <td>25</td>
+          <td>50</td>
+          <td>75</td>
+          <td>100</td>
+          <td>125</td>
+        </tr>
+        <tr>
+          <td>Full House</td>
+          <td>9</td>
+          <td>18</td>
+          <td>27</td>
+          <td>36</td>
+          <td>45</td>
+        </tr>
+        <tr>
+          <td>Flush</td>
+          <td>6</td>
+          <td>12</td>
+          <td>18</td>
+          <td>24</td>
+          <td>30</td>
+        </tr>
+        <tr>
+          <td>Straight</td>
+          <td>4</td>
+          <td>8</td>
+          <td>12</td>
+          <td>16</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>3 of a Kind</td>
+          <td>3</td>
+          <td>6</td>
+          <td>9</td>
+          <td>12</td>
+          <td>15</td>
+        </tr>
+        <tr>
+          <td>2 Pairs</td>
+          <td>2</td>
+          <td>4</td>
+          <td>6</td>
+          <td>8</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>Jacks or Better</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+        </tr>
+      </table>
+    </div>
+    <audio src="audio/start.wav" id="start_audio"></audio>
+    <audio src="audio/Hold.wav" id="hold_audio"></audio>
+    <audio src="audio/Unhold.wav" id="unhold_audio"></audio>
+    <audio src="audio/Deal.wav" id="deal_audio"></audio>
+    <audio src="audio/lose.wav" id="lose_audio"></audio>
+    <audio src="audio/win.wav" id="win_audio"></audio>
     <!-- Import program logic -->
     <script src="global_script.js"></script>
     <script src="game_helper_funcs.js"></script>
