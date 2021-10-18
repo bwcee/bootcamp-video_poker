@@ -139,7 +139,12 @@ function isJacksOrBetter() {
     }
   }
 
-  results.length > 0 && results[0].rank >= 11 ? (chk = true) : chk;
+  if(results.length > 0 && results[0].rank >= 11){
+    chk = true
+  } else if (results.length > 0 && results[0].rank === 1){
+    chk = true
+  }
+   
   return chk;
 }
 

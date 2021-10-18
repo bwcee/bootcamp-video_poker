@@ -120,7 +120,47 @@ const dealAudio = document.getElementById("deal_audio");
 const loseAudio = document.getElementById("lose_audio");
 const winAudio = document.getElementById("win_audio");
 
+
+
 //Test userHands
+// Jacks or better
+/* userHand = [
+      {
+        name: "3",
+        suit: "hearts",
+        rank: 3,
+        suitPic: "images/cards/3_hearts.PNG",
+        selected: false,
+      },
+      {
+        name: "Ace",
+        suit: "hearts",
+        rank: 1,
+        suitPic: "images/cards/1_hearts.PNG",
+        selected: false,
+      },
+      {
+        name: "5",
+        suit: "spades",
+        rank: 5,
+        suitPic: "images/cards/5_spades.PNG",
+        selected: false,
+      },
+      {
+        name: "Ace",
+        suit: "clubs",
+        rank: 1,
+        suitPic: "images/cards/1_clubs.PNG",
+        selected: false,
+      },
+      {
+        name: "jack",
+        suit: "spades",
+        rank: 11,
+        suitPic: "images/cards/11_spades.PNG",
+        selected: false,
+      },] */
+
 // 3 of a Kind
 /* userHand = [
       {
