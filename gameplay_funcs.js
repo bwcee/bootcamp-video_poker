@@ -14,7 +14,17 @@ function isRoyal() {
     sortedHand[2].rank === 11 &&
     sortedHand[3].rank === 12 &&
     sortedHand[4].rank === 13;
-  return allSameSuit && inSequence; //if both true, shld return true
+
+    return allSameSuit && inSequence
+  // let chk = false;
+  // for (let i = 4; i > 1; i -= 1) {
+  //   sortedHand[i] - sortedHand[i - 1] == 1;
+  //   chk = true;
+  // }
+
+  // let combined = chk && allSameSuit
+
+  // return combined && sortedHand[4].rank-sortedHand[0].rank===12 ; //if both true, shld return true
 }
 
 /**
@@ -24,8 +34,10 @@ function isRoyal() {
 function isStraightFlush() {
   const allSameSuit = sortedHand.every((el) => el.suit === sortedHand[0].suit);
   const inSequence = sortedHand.every((el, index) => {
-    index === sortedHand.length - 1 ||
-      sortedHand[index + 1].rank - el.rank === 1;
+    return (
+      index === sortedHand.length - 1 ||
+      sortedHand[index + 1].rank - el.rank === 1
+    );
   });
 
   return allSameSuit && inSequence; //if both true, shld return true
@@ -36,11 +48,16 @@ function isStraightFlush() {
  * @returns {boolean} Bolean value
  */
 function isFourOfAKind() {
-  const equalFromFront =
-    ((sortedHand[0] === sortedHand[1]) === sortedHand[2]) === sortedHand[3];
-  const equalFromBack =
-    ((sortedHand[1] === sortedHand[2]) === sortedHand[3]) === sortedHand[4];
-  return equalFromFront || equalFromBack; //if either true, shld return true
+  let mf = 1;
+  let m = 0;
+  for (let i = 0; i < sortedHand.length; i += 1) {
+    for (let j = i; j < sortedHand.length; j += 1) {
+      sortedHand[i].rank == sortedHand[j].rank ? (m += 1) : m;
+      mf < m ? (mf = m) : mf;
+    }
+    m = 0;
+  }
+  return mf === 4;
 }
 
 /**
@@ -75,10 +92,11 @@ function isFlush() {
  */
 function isStraight() {
   const inSequence = sortedHand.every((el, index) => {
-    index === sortedHand.length - 1 ||
-      sortedHand[index + 1].rank - el.rank === 1;
+    return (
+      index === sortedHand.length - 1 ||
+      sortedHand[index + 1].rank - el.rank == 1
+    );
   });
-
   return inSequence;
 }
 
@@ -162,6 +180,8 @@ function calcHandScore() {
   }
   if (coinBet === 5 && base === 9) {
     credit += 4000;
+    updateInfoBar("win", payoutTable[base - 1].hand);
+    winAudio.play();
   } else if (base >= 1) {
     let winnnings = payoutTable[base - 1].pay * coinBet;
     credit += winnnings;

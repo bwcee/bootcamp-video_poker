@@ -196,3 +196,238 @@ const winAudio = document.getElementById("win_audio");
     selected: false,
   },
 ]; */
+
+//Straight
+/* userHand = [
+  {
+    name: "7",
+    suit: "clubs",
+    rank: 7,
+    suitPic: "images/cards/7_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "8",
+    suit: "diamonds",
+    rank: 8,
+    suitPic: "images/cards/8_diamonds.PNG",
+    selected: false,
+  },
+  {
+    name: "9",
+    suit: "hearts",
+    rank: 9,
+    suitPic: "images/cards/9_hearts.PNG",
+    selected: false,
+  },
+  {
+    name: "10",
+    suit: "diamonds",
+    rank: 10,
+    suitPic: "images/cards/10_diamonds.PNG",
+    selected: false,
+  },
+  {
+    name: "jack",
+    suit: "clubs",
+    rank: 11,
+    suitPic: "images/cards/11_clubs.PNG",
+    selected: false,
+  },
+]; */
+
+//Flush
+/* userHand = [
+  {
+    name: "7",
+    suit: "clubs",
+    rank: 7,
+    suitPic: "images/cards/7_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "8",
+    suit: "clubs",
+    rank: 8,
+    suitPic: "images/cards/8_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "9",
+    suit: "clubs",
+    rank: 9,
+    suitPic: "images/cards/9_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "10",
+    suit: "clubs",
+    rank: 10,
+    suitPic: "images/cards/10_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "jack",
+    suit: "hearts",
+    rank: 11,
+    suitPic: "images/cards/11_hearts.PNG",
+    selected: false,
+  },
+]; */
+
+//Full House
+/* userHand = [
+  {
+    name: "7",
+    suit: "clubs",
+    rank: 7,
+    suitPic: "images/cards/7_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "7",
+    suit: "clubs",
+    rank: 7,
+    suitPic: "images/cards/7_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "9",
+    suit: "clubs",
+    rank: 9,
+    suitPic: "images/cards/9_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "9",
+    suit: "clubs",
+    rank: 9,
+    suitPic: "images/cards/9_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "9",
+    suit: "clubs",
+    rank: 9,
+    suitPic: "images/cards/9_clubs.PNG",
+    selected: false,
+  },
+]; */
+
+//4 of a kind
+/* userHand = [
+  {
+    name: "7",
+    suit: "clubs",
+    rank: 7,
+    suitPic: "images/cards/7_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "9",
+    suit: "clubs",
+    rank: 9,
+    suitPic: "images/cards/9_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "9",
+    suit: "clubs",
+    rank: 9,
+    suitPic: "images/cards/9_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "9",
+    suit: "clubs",
+    rank: 9,
+    suitPic: "images/cards/9_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "9",
+    suit: "clubs",
+    rank: 9,
+    suitPic: "images/cards/9_clubs.PNG",
+    selected: false,
+  },
+]; */
+
+//Straight flush
+/* userHand = [
+  {
+    name: "7",
+    suit: "clubs",
+    rank: 7,
+    suitPic: "images/cards/7_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "8",
+    suit: "clubs",
+    rank: 8,
+    suitPic: "images/cards/8_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "9",
+    suit: "clubs",
+    rank: 9,
+    suitPic: "images/cards/9_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "10",
+    suit: "clubs",
+    rank: 10,
+    suitPic: "images/cards/10_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "jack",
+    suit: "clubs",
+    rank: 11,
+    suitPic: "images/cards/11_clubs.PNG",
+    selected: false,
+  },
+]; */
+
+
+//Royal flush
+/* userHand = [
+  {
+    name: "Ace",
+    suit: "clubs",
+    rank: 1,
+    suitPic: "images/cards/1_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "10",
+    suit: "clubs",
+    rank: 10,
+    suitPic: "images/cards/10_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "jack",
+    suit: "clubs",
+    rank: 11,
+    suitPic: "images/cards/11_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "queen",
+    suit: "clubs",
+    rank: 12,
+    suitPic: "images/cards/12_clubs.PNG",
+    selected: false,
+  },
+  {
+    name: "king",
+    suit: "clubs",
+    rank: 13,
+    suitPic: "images/cards/13_clubs.PNG",
+    selected: false,
+  },
+]; */
