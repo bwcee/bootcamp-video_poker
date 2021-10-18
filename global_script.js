@@ -158,4 +158,4 @@ const winAudio = document.getElementById("win_audio");
         rank: 11,
         suitPic: "images/cards/11_spades.PNG",
         selected: false,
-      }, */
+      },] */

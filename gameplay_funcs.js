@@ -87,17 +87,16 @@ function isStraight() {
  * @returns {boolean} Bolean value
  */
 function isThreeOfAKind() {
-  let chk = false;
-  let results = [];
-
-  for (let i = 0; i < sortedHand.length - 1; i++) {
-    if (sortedHand[i + 1].rank == sortedHand[i].rank) {
-      results.push(sortedHand[i]);
+  let mf = 1;
+  let m = 0;
+  for (let i = 0; i < sortedHand.length; i += 1) {
+    for (let j = 1; j < sortedHand.length; j += 1) {
+      sortedHand[i].rank == sortedHand[j].rank ? (m += 1) : m;
+      mf < m ? (mf = m) : mf;
     }
+    m = 0;
   }
-
-  results.length === 2 ? (chk = true) : chk;
-  return chk;
+  return mf === 3;
 }
 
 /**
