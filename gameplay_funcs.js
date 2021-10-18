@@ -3,8 +3,8 @@
 ////////////////////////////////////////////////
 
 /**
- * Function to test if userHand is a royal flush. If true, this is assigned a base number 9 so payout can be calculated. This function only works w sortedHand. 
- * @returns {boolean} Bolean value 
+ * Function to test if userHand is a royal flush. If true, this is assigned a base number 9 so payout can be calculated. This function only works w sortedHand.
+ * @returns {boolean} Bolean value
  */
 function isRoyal() {
   const allSameSuit = sortedHand.every((el) => el.suit === sortedHand[0].suit);
@@ -19,7 +19,7 @@ function isRoyal() {
 
 /**
  *Function to test if userHand is a straight flush. If true, this is assigned a base number 8 so payout can be calculated. This function only works w sortedHand. Did not code for cases where Ace is part of straight flush, becos then it is not a straighforward sequence.
- * @returns {boolean} Bolean value 
+ * @returns {boolean} Bolean value
  */
 function isStraightFlush() {
   const allSameSuit = sortedHand.every((el) => el.suit === sortedHand[0].suit);
@@ -31,10 +31,9 @@ function isStraightFlush() {
   return allSameSuit && inSequence; //if both true, shld return true
 }
 
-
 /**
- *Function to test if userHand is 4 of a kind. If true, this is assigned a base number 7 so payout can be calculated. This function only works w sortedHand. 
- * @returns {boolean} Bolean value 
+ *Function to test if userHand is 4 of a kind. If true, this is assigned a base number 7 so payout can be calculated. This function only works w sortedHand.
+ * @returns {boolean} Bolean value
  */
 function isFourOfAKind() {
   const equalFromFront =
@@ -45,8 +44,8 @@ function isFourOfAKind() {
 }
 
 /**
- *Function to test if userHand is fullhouse. If true, this is assigned a base number 6 so payout can be calculated. This function only works w sortedHand. 
- * @returns {boolean} Bolean value 
+ *Function to test if userHand is fullhouse. If true, this is assigned a base number 6 so payout can be calculated. This function only works w sortedHand.
+ * @returns {boolean} Bolean value
  */
 function isFullHouse() {
   const chkFrmFrontArr = sortedHand.filter(
@@ -62,8 +61,8 @@ function isFullHouse() {
 }
 
 /**
- *Function to test if userHand is flush. If true, this is assigned a base number 5 so payout can be calculated. Although does not require sortedHand to work, no harm using sortedHand. 
- * @returns {boolean} Bolean value 
+ *Function to test if userHand is flush. If true, this is assigned a base number 5 so payout can be calculated. Although does not require sortedHand to work, no harm using sortedHand.
+ * @returns {boolean} Bolean value
  */
 function isFlush() {
   const allSameSuit = sortedHand.every((el) => el.suit === sortedHand[0].suit);
@@ -72,7 +71,7 @@ function isFlush() {
 
 /**
  *Function to test if userHand is a straight. If true, this is assigned a base number 4 so payout can be calculated. This function only works w sortedHand. Did not code for cases where Ace is part of straight flush, becos then it is not a straighforward sequence.
- * @returns {boolean} Bolean value 
+ * @returns {boolean} Bolean value
  */
 function isStraight() {
   const inSequence = sortedHand.every((el, index) => {
@@ -85,22 +84,25 @@ function isStraight() {
 
 /**
  *Function to test if userHand is 3 of a kind. If true, this is assigned a base number 3 so payout can be calculated. This function only works w sortedHand.
- * @returns {boolean} Bolean value 
+ * @returns {boolean} Bolean value
  */
 function isThreeOfAKind() {
-  const chkFrmFrontArr = sortedHand.filter(
-    (el) => el.rank === sortedHand[0].rank
-  );
-  const chkFrmBckArr = sortedHand.filter(
-    (el) => el.rank === sortedHand[sortedHand.length - 1].rank
-  );
-  const chk = chkFrmFrontArr.length === 3 || chkFrmBckArr.length === 3;
+  let chk = false;
+  let results = [];
+
+  for (let i = 0; i < sortedHand.length - 1; i++) {
+    if (sortedHand[i + 1].rank == sortedHand[i].rank) {
+      results.push(sortedHand[i]);
+    }
+  }
+
+  results.length === 2 ? (chk = true) : chk;
   return chk;
 }
 
 /**
  *Function to test if userHand is two pairs. If true, this is assigned a base number 2 so payout can be calculated. This function only works w sortedHand.
- * @returns {boolean} Bolean value 
+ * @returns {boolean} Bolean value
  */
 function isTwoPair() {
   let numMatches = 0;
@@ -117,7 +119,7 @@ function isTwoPair() {
 
 /**
  *Function to test if userHand is jacks or better. If true, this is assigned a base number 1 so payout can be calculated. This function only works w sortedHand.
- * @returns {boolean} Bolean value 
+ * @returns {boolean} Bolean value
  */
 function isJacksOrBetter() {
   let chk = false;
@@ -133,9 +135,8 @@ function isJacksOrBetter() {
   return chk;
 }
 
-
 /**
- *Function that calls all 9 functions above to test if player has a winning combination. If yes, a base num is assigned so correct payout base can be obtained from global variable payoutTable and multiplied with the # of coins bet to arrive at the correct payout.        
+ *Function that calls all 9 functions above to test if player has a winning combination. If yes, a base num is assigned so correct payout base can be obtained from global variable payoutTable and multiplied with the # of coins bet to arrive at the correct payout.
  */
 function calcHandScore() {
   let base = 0;
@@ -172,5 +173,4 @@ function calcHandScore() {
     updateInfoBar();
     loseAudio.play();
   }
-  
 }

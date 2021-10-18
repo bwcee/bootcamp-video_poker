@@ -2,7 +2,7 @@
 //Game Initialisation
 ////////////////////////////////////////////////
 /**
- * IIFE to kickstart game initial display. Sets up the help and close game button on the top right with their respective addEventListeners. 
+ * IIFE to kickstart game initial display. Sets up the help and close game button on the top right with their respective addEventListeners.
  */
 (() => {
   // draw elements to show for this start screen
@@ -65,7 +65,7 @@
 })();
 
 /**
- * Function to set up display for actual game play. 
+ * Function to set up display for actual game play.
  */
 function gameInit() {
   // clear all the  containing divs

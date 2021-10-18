@@ -119,3 +119,43 @@ const unholdAudio = document.getElementById("unhold_audio");
 const dealAudio = document.getElementById("deal_audio");
 const loseAudio = document.getElementById("lose_audio");
 const winAudio = document.getElementById("win_audio");
+
+
+//Test userHands
+// 3 of a Kind
+/* userHand = [
+      {
+        name: "3",
+        suit: "hearts",
+        rank: 3,
+        suitPic: "images/cards/3_hearts.PNG",
+        selected: false,
+      },
+      {
+        name: "5",
+        suit: "hearts",
+        rank: 5,
+        suitPic: "images/cards/5_hearts.PNG",
+        selected: false,
+      },
+      {
+        name: "5",
+        suit: "spades",
+        rank: 5,
+        suitPic: "images/cards/5_spades.PNG",
+        selected: false,
+      },
+      {
+        name: "5",
+        suit: "clubs",
+        rank: 5,
+        suitPic: "images/cards/5_clubs.PNG",
+        selected: false,
+      },
+      {
+        name: "jack",
+        suit: "spades",
+        rank: 11,
+        suitPic: "images/cards/11_spades.PNG",
+        selected: false,
+      }, */
