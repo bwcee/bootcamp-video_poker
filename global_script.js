@@ -120,7 +120,6 @@ const dealAudio = document.getElementById("deal_audio");
 const loseAudio = document.getElementById("lose_audio");
 const winAudio = document.getElementById("win_audio");
 
-
 //Test userHands
 // 3 of a Kind
 /* userHand = [
@@ -159,3 +158,41 @@ const winAudio = document.getElementById("win_audio");
         suitPic: "images/cards/11_spades.PNG",
         selected: false,
       },] */
+
+/* userHand = [
+  {
+    name: "5",
+    suit: "hearts",
+    rank: 5,
+    suitPic: "images/cards/5_hearts.PNG",
+    selected: false,
+  },
+  {
+    name: "5",
+    suit: "spades",
+    rank: 5,
+    suitPic: "images/cards/5_spades.PNG",
+    selected: false,
+  },
+  {
+    name: "5",
+    suit: "diamonds",
+    rank: 5,
+    suitPic: "images/cards/5_diamonds.PNG",
+    selected: false,
+  },
+  {
+    name: "6",
+    suit: "diamonds",
+    rank: 6,
+    suitPic: "images/cards/6_diamonds.PNG",
+    selected: false,
+  },
+  {
+    name: "10",
+    suit: "hearts",
+    rank: 10,
+    suitPic: "images/cards/10_hearts.PNG",
+    selected: false,
+  },
+]; */
