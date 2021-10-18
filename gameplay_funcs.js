@@ -15,16 +15,7 @@ function isRoyal() {
     sortedHand[3].rank === 12 &&
     sortedHand[4].rank === 13;
 
-    return allSameSuit && inSequence
-  // let chk = false;
-  // for (let i = 4; i > 1; i -= 1) {
-  //   sortedHand[i] - sortedHand[i - 1] == 1;
-  //   chk = true;
-  // }
-
-  // let combined = chk && allSameSuit
-
-  // return combined && sortedHand[4].rank-sortedHand[0].rank===12 ; //if both true, shld return true
+    return allSameSuit && inSequence//if both true, shld return true
 }
 
 /**
