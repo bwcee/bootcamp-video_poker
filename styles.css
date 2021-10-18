@@ -3,6 +3,64 @@ body {
   background-color: blue;
 }
 
+#marquee img {
+  width: 70%;
+  margin: auto;
+  display: flex;
+}
+
+/* Pay table at the top of the page */
+#pay_table {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#pay_table table {
+  margin: auto;
+  width: 60%;
+}
+
+table {
+  display: table-column;
+}
+
+table,
+th {
+  border: 2px solid rgb(250, 246, 6);
+  border-collapse: collapse;
+}
+
+th,
+td {
+  color: rgb(250, 246, 6);
+  font-size: min(1.8vw, 0.9rem);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(12, 12, 160);
+}
+
+th {
+  text-transform: uppercase;
+  background-color: rgb(4, 4, 75);
+}
+
+table th {
+  width: 10vw;
+}
+
+table th:nth-child(1) {
+  width: 20vw;
+}
+
+tr {
+  text-align: center;
+}
+
+.change_bckgrd {
+  background-color: white;
+}
+
+/* Start display */
 .start_display {
   position: relative;
   text-align: center;
@@ -39,18 +97,14 @@ body {
   }
 }
 
-.start_display h3 {
+.start_display h3,
+.hook_display h3 {
   font-size: 1.3rem;
   font-family: "Bangers", cursive;
   letter-spacing: 1.5px;
 }
 
-#marquee img {
-  width: 70%;
-  margin: auto;
-  display: flex;
-}
-
+/* Info bar  */
 .info_bar {
   width: 70%;
   margin: auto;
@@ -60,44 +114,45 @@ body {
 
 .info_bar h3 {
   color: whitesmoke;
-  font-size: 1.8vw;
+  font-size: 2vw;
 }
 
+/* Coin bar */
 .coin_bar {
   width: 60%;
   margin: auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   margin-bottom: 10px;
 }
 
-.card img {
+.coin_bar img {
+  width: 6vw;
   height: auto;
-  width: 10vw;
 }
 
-button {
-  border-radius: 8px;
-  margin: 5px;
-  font-size: 2.5vw;
-  font-weight: bold;
-  background-color: crimson;
-  border-width: 0px;
+.holder {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.opaque {
-  position: relative;
-  bottom: 10px;
-  opacity: 0.4;
-}
-
+/* Area for displaying the cards */
 .play_area {
   display: flex;
   justify-content: center;
 }
 
+/* Area for displaying the buttons to control play */
+.controls_display {
+  display: flex;
+  justify-content: center;
+}
+
+/* Cards display */
 .card {
   display: inline;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .card img {
@@ -105,53 +160,117 @@ button {
   height: auto;
 }
 
+/* Buttons */
+button {
+  border-radius: 8px;
+  margin: 5px;
+  font-size: 2vw;
+  font-weight: bold;
+  background-color: crimson;
+  border-width: 0px;
+}
+
+.help_button,
+.close_game_button {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  transform: scale(0.8);
+}
+
+.help_button {
+  top: 5px;
+  right: 33px;
+}
+
+.close_help_button {
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+/* Effects */
+.opaque {
+  position: relative;
+  bottom: 10px;
+  opacity: 0.4;
+}
+
 .hide {
   display: none;
 }
 
-.controls_display {
+/* Help text display */
+.help_display {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(247, 244, 244);
+  position: fixed;
+  top: 35%;
+  width: 80%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border: 3px solid rgb(88, 88, 88);
+  border-radius: 30px;
+  display: grid;
+}
+
+/* Curtain for exiting game */
+.curtain {
+  background-color: rgba(26, 26, 26, 0.9);
+
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  animation: fadebackground 3s;
+}
+
+@keyframes fadebackground {
+  from {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  to {
+    background-color: rgba(26, 26, 26, 0.9);
+  }
+}
+
+.hook_display {
+  position: absolute;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
   display: flex;
   justify-content: center;
 }
 
-#pay_table {
-  display: flex;
-  margin-top: 10px;
-  margin-bottom: 20px;
+.hook_display div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(226, 14, 14);
+  animation: fade 4s;
+  cursor: pointer;
 }
 
-#pay_table table {
-  margin: auto;
-  width: 60%;
+.hook_display img {
+  transform: rotate(30deg) scale(0.3);
+  animation: fade 4s;
+  cursor: pointer;
 }
 
-table,
-th {
-  border: 2px solid rgb(250, 246, 6);
-  border-collapse: collapse;
-}
-
-th,
-td {
-  color: rgb(250, 246, 6);
-  font-size: min(1.8vw, 0.9rem);
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(12, 12, 160);
-}
-
-th {
-  text-transform: uppercase;
-  background-color: rgb(4, 4, 75);
-}
-
-table th {
-  width: 10vw;
-}
-
-table th:nth-child(1) {
-  width: 20vw;
-}
-
-tr {
-  text-align: center;
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

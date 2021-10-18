@@ -1,16 +1,16 @@
 ////////////////////////////////////////////////
 //Global Variables
 ////////////////////////////////////////////////
-let rounds = 0;
 
-let playDeck;
+let gameStage = 0;
+
+let playDeck = [];
 
 let credit = 100;
 let coinBet = 0;
 
 let userHand = [];
 let sortedHand = [];
-let userDiscards = [];
 
 const payoutTable = [
   { hand: "Jacks or Better", pay: 1 },
@@ -32,7 +32,15 @@ let coinArr = [
   { value: 5, image: "images/FiveChip.png", selected: false },
 ];
 
-//UI constants
+let tableColHighlight = [
+  "one_coin",
+  "two_coin",
+  "three_coin",
+  "four_coin",
+  "five_coin",
+];
+
+//UI
 
 //div to contain starting screen
 const startDisp = document.createElement("div");
@@ -40,8 +48,9 @@ startDisp.classList.add("start_display");
 
 //div to contain entire display
 const wholeDisp = document.createElement("div");
+wholeDisp.classList.add("whole_display");
 
-//div to contain entire play  area
+//div to contain entire play area
 const playArea = document.createElement("div");
 playArea.classList.add("play_area");
 
@@ -61,6 +70,18 @@ cardsDisplay.classList.add("cards_display");
 const controlsDisplay = document.createElement("div");
 controlsDisplay.classList.add("controls_display");
 
+//help text div
+const helpDisplay = document.createElement("div");
+helpDisplay.classList.add("help_display");
+
+//curtain div to cover the whole screen
+const curtain = document.createElement("div");
+curtain.classList.add("curtain");
+
+//hook div for hook pic
+const hookDisp = document.createElement("div");
+hookDisp.classList.add("hook_display");
+
 //deal button
 const dealBtn = document.createElement("button");
 dealBtn.classList.add("deal_button");
@@ -79,7 +100,17 @@ replayBtn.innerText = "Replay";
 // help button
 const helpBtn = document.createElement("button");
 helpBtn.classList.add("help_button");
-helpBtn.innerText = "Help";
+helpBtn.innerText = "?";
+
+// close help button
+const closeHelpBtn = document.createElement("button");
+closeHelpBtn.classList.add("close_help_button");
+closeHelpBtn.innerText = "Got it!";
+
+// close game button
+const closeGameBtn = document.createElement("button");
+closeGameBtn.classList.add("close_game_button");
+closeGameBtn.innerText = "X";
 
 //Audio
 const startAudio = document.getElementById("start_audio");
