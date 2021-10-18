@@ -23,44 +23,7 @@
   textDiv.addEventListener("click", () => {
     startDisp.remove();
     playDeck = shuffleCards(makeDeck());
-    // deal();
-   userHand = [
-  {
-    name: "Ace",
-    suit: "clubs",
-    rank: 1,
-    suitPic: "images/cards/1_clubs.PNG",
-    selected: false,
-  },
-  {
-    name: "10",
-    suit: "clubs",
-    rank: 10,
-    suitPic: "images/cards/10_clubs.PNG",
-    selected: false,
-  },
-  {
-    name: "jack",
-    suit: "clubs",
-    rank: 11,
-    suitPic: "images/cards/11_clubs.PNG",
-    selected: false,
-  },
-  {
-    name: "queen",
-    suit: "clubs",
-    rank: 12,
-    suitPic: "images/cards/12_clubs.PNG",
-    selected: false,
-  },
-  {
-    name: "king",
-    suit: "clubs",
-    rank: 13,
-    suitPic: "images/cards/13_clubs.PNG",
-    selected: false,
-  },
-];
+    deal();
     sort();
     gameInit();
   });
